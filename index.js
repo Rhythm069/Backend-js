@@ -1,11 +1,15 @@
 console.log("Hello, World!");
 
 const express = require('express');
+const connectToDatabase = require('./db/db');
 const app = express();
-const PORT = 5000;
+const dotenv = require("dotenv");
+dotenv.config();
+const PORT = process.env.PORT;
+connectToDatabase();
 
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+  res.send('Rhythm  ');
 });
 
 app.listen(PORT, () => {
